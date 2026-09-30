@@ -124,6 +124,10 @@ p {
     transition: 250ms ease all;
 }
 
+.list-items-circle li a .icon-x svg {
+    display: block;
+}
+
 .list-items-circle li a:hover .fab {
     color: var(--black);
 }
@@ -595,6 +599,61 @@ p {
 
     .header,
     .section {
-        padding: 40px;
+        min-height: auto;
+        padding: 56px 16px;
+    }
+
+    h1 {
+        font-size: 40px;
+        line-height: 120%;
+        overflow-wrap: anywhere;
+    }
+
+    .header .header-links {
+        flex-wrap: wrap;
+    }
+
+    .list-items-circle li a .fab {
+        width: 56px;
+        height: 56px;
+        font-size: 24px;
+    }
+
+    .flex-list li {
+        margin: 8px;
+    }
+
+    .about h2 {
+        margin-bottom: 80px;
+    }
+
+    .experience-description {
+        margin-bottom: 64px;
+    }
+
+    .experience-description img {
+        display: none;
+    }
+
+    .projects .card {
+        height: auto;
+        min-height: 480px;
+        padding: 20px;
+    }
+
+    .projects .card .card-buttons .card-button--site,
+    .projects .card .card-buttons .card-button--code {
+        flex: 1;
+        width: auto;
+    }
+
+    .skills .skill-card {
+        width: 96px;
+        height: 96px;
+        margin: 0 16px 16px 0;
+    }
+
+    .skills .skill-card .fab {
+        font-size: 48px;
     }
 }
