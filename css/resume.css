@@ -263,9 +263,13 @@ p {
     border: 1px solid var(--gray);
 
     height: 510px;
+    width: 100%;
     max-width: 390px;
     padding: 30px;
     margin: 20px auto;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .projects .card img {
@@ -273,6 +277,10 @@ p {
     max-width: 325px;
     height: auto;
     margin: 0 auto 16px;
+
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: top;
 }
 
 .projects .card .card-title {
@@ -283,12 +291,14 @@ p {
 }
 
 .projects .card .card-description {
-    margin-bottom: 60px;
+    margin-bottom: 24px;
 }
 
 .projects .card .card-buttons {
     display: flex;
     justify-content: space-between;
+    gap: 16px;
+    margin-top: auto;
 }
 
 .projects .card .card-buttons .card-button--site,
@@ -302,6 +312,11 @@ p {
 
     opacity: 1;
     color: var(--white);
+    font-family: inherit;
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
 
     transition: 250ms ease all;
 }
@@ -316,6 +331,87 @@ p {
 
 .projects .card .card-buttons .card-button--site:hover,
 .projects .card .card-buttons .card-button--code:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/* Fenêtre d'aperçu */
+.modal[hidden],
+.modal-nav[hidden] {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background-color: rgba(6, 0, 3, 0.92);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 64px 16px 16px;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.modal-body img {
+    display: block;
+    width: 100%;
+    max-height: 78vh;
+    object-fit: contain;
+    background-color: var(--white);
+}
+
+.modal-video {
+    position: relative;
+    aspect-ratio: 16 / 9;
+}
+
+.modal-video iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.modal-close {
+    position: absolute;
+    top: -52px;
+    right: 0;
+    font-size: 40px;
+    line-height: 1;
+    color: var(--white);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.modal-nav button {
+    width: 56px;
+    height: 44px;
+    font-size: 22px;
+    color: var(--white);
+    background-color: var(--gray);
+    border: none;
+    cursor: pointer;
+    transition: 250ms ease all;
+}
+
+.modal-nav button:hover {
     background-color: var(--white);
     color: var(--black);
 }

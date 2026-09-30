@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporting acquisition bancaire | Ingrid AVOCEGAMOU</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="../css/resume.css" rel="stylesheet">
+
+    <style>
+        .case {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 16px 100px;
+        }
+
+        .case .back {
+            display: inline-block;
+            margin-bottom: 40px;
+            opacity: 0.7;
+            color: var(--white);
+        }
+
+        .case .back:hover {
+            opacity: 1;
+        }
+
+        .case h1 {
+            font-size: var(--font-40);
+            line-height: 125%;
+            margin-bottom: 16px;
+        }
+
+        .case .lead {
+            opacity: 0.7;
+            margin-bottom: 40px;
+        }
+
+        .case h2 {
+            margin: 56px 0 16px;
+        }
+
+        .case p,
+        .case li {
+            opacity: 0.85;
+        }
+
+        .case ul {
+            padding-left: 20px;
+        }
+
+        .case li {
+            margin-bottom: 10px;
+            font-size: 18px;
+            line-height: 150%;
+        }
+
+        .case figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .case figcaption {
+            font-size: 14px;
+            opacity: 0.6;
+            margin-top: 8px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+            padding: 0 !important;
+            margin-bottom: 40px;
+        }
+
+        .tags li {
+            border: 1px solid var(--gray);
+            padding: 4px 12px;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .flow {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .flow span {
+            background-color: var(--gray);
+            padding: 12px 18px;
+        }
+
+        .flow b {
+            color: var(--blue);
+            font-weight: 400;
+        }
+
+        .note {
+            border-left: 3px solid var(--blue);
+            padding: 12px 16px;
+            margin-top: 56px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="case">
+        <a class="back" href="../index.html#projects">&larr; Retour au portfolio</a>
+
+        <h1>Reporting d'activité acquisition bancaire</h1>
+        <p class="lead">Rapport Power BI connecté à un modèle SQL Server Analysis Services, pour piloter l'activité
+            monétique (TPE et e-commerce) d'un réseau de commerçants.</p>
+
+        <ul class="tags">
+            <li>SQL Server</li>
+            <li>SSAS</li>
+            <li>Power BI</li>
+            <li>DAX</li>
+            <li>Modélisation</li>
+        </ul>
+
+        <figure>
+            <img src="../img/projects/project_1.png" alt="Vue globale du rapport : flux, chiffre d'affaires, commission et marge">
+            <figcaption>Vue globale : indicateurs clés, répartition TPE / e-commerce, flux par activité et par canal.</figcaption>
+        </figure>
+
+        <h2>Objectif</h2>
+        <p>Donner aux équipes commerciales une vue unique sur le flux réalisé par les commerçants, les revenus
+            (CA HT, commission nette, marge) et la qualité des autorisations, avec un suivi hebdomadaire.</p>
+
+        <h2>Architecture</h2>
+        <div class="flow">
+            <span>Données transactionnelles<br>SQL Server</span><b>&rarr;</b>
+            <span>Modèle analytique<br>SSAS</span><b>&rarr;</b>
+            <span>Rapport interactif<br>Power BI</span>
+        </div>
+
+        <h2>Contenu du rapport</h2>
+        <ul>
+            <li><strong>Vue globale</strong> : flux réalisé, CA HT, commission nette, marge, commerçants actifs et
+                inactifs ; répartition TPE / e-commerce ; flux par secteur d'activité et canal ; tendance hebdomadaire.</li>
+            <li><strong>Vue consolidée par enseigne</strong> : flux national et international par réseau de cartes,
+                nombre de terminaux, commission et évolution.</li>
+            <li><strong>Vue par semaine</strong> : détail jour par jour et arbre de décomposition (classe commerçant,
+                placement, activité) pour expliquer les variations.</li>
+            <li><strong>Vue par autorisations</strong> : autorisations et pré-autorisations, taux d'acceptation et
+                motifs de refus.</li>
+            <li>Navigation par boutons entre les vues et filtres communs : commerçant, état d'activité, commercial,
+                placement, canal, ville, dates de création et de transaction.</li>
+        </ul>
+
+        <h2>Ce que j'ai réalisé</h2>
+        <ul>
+            <li>Conception du modèle analytique dans SSAS et des mesures DAX (flux, revenus, marge, segmentation des
+                commerçants par classe).</li>
+            <li>Construction des quatre vues Power BI, de la navigation et des filtres croisés.</li>
+            <li>Mise en place d'un suivi hebdomadaire pour détecter rapidement les baisses d'activité.</li>
+        </ul>
+
+        <p class="note">Ce projet repose sur des données bancaires réelles et confidentielles : seuls des indicateurs
+            globaux sont présentés ici, sans démonstration vidéo ni fichier source.</p>
+    </main>
+</body>
+
+</html>

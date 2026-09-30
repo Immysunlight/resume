@@ -85,7 +85,7 @@
 
         <!-- PROJECTS -->
 
-        <section class="section projects">
+        <section class="section projects" id="projects">
             <div class="flex-between">
                 <h2>Take a look at my projects</h2>
 
@@ -95,38 +95,34 @@
             </div>
 
             <div class="cards flex-center">
-                 <!-- Project 1 -->
+                 <!-- Project 1 : AdventureWorks (données publiques) -->
                  <div class="card">
-                    <img src="./img/projects/project_1.png" alt="">
-                    <h3 class="card-title"> AdventuresWorks</h3>
-                    <p class="card-description">Analyse marketing des ventes et recommandations</p>
+                    <img src="./img/projects/adventureworks/02.png" alt="Rapport Power BI AdventureWorks - page Ventes">
+                    <h3 class="card-title">AdventureWorks</h3>
+                    <p class="card-description">Power BI : analyse des ventes, produits et clients, avec synthèse et recommandations.</p>
                     <div class="card-buttons">
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiYWE0ZmEyMjgtMjhmNi00ODE4LTgzNDMtZmZhZWU1MjZiZjUyIiwidCI6IjVjYjA2YTgwLTJkZDUtNDNkOS05YjJlLWFmMDA1M2I3MTRkYyIsImMiOjl9"class="card-button--site">Site</a>
-                        <a href="#" class="card-button--code">Code</a>
+                        <button type="button" class="card-button--site" data-gallery="adventureworks">Aperçu</button>
+                        <a href="./files/AdventureWorks_2022.pbix" class="card-button--code" download>.pbix</a>
                     </div>
                 </div>
 
-                
-
-                <!-- Project 2 -->
+                <!-- Project 2 : Reporting bancaire (données confidentielles, pas de vidéo) -->
                  <div class="card">
-                    <img src="./img/projects/project_2.png" alt="">
-                    <h3 class="card-title">Monitoring des TPE</h3>
-                    <p class="card-description">Dashboards interactifs permettant le monitoring de l'activité des TPEs.</p>
+                    <img src="./img/projects/project_1.png" alt="Rapport d'activité acquisition bancaire - vue globale">
+                    <h3 class="card-title">Reporting acquisition bancaire</h3>
+                    <p class="card-description">SSAS + Power BI : suivi des flux TPE et e-commerce, commissions et autorisations.</p>
                     <div class="card-buttons">
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiNjRlZTI2ZTktMTIzOC00YWQxLWI0MTQtYjRmNjQyOTAwMDczIiwidCI6IjVjYjA2YTgwLTJkZDUtNDNkOS05YjJlLWFmMDA1M2I3MTRkYyIsImMiOjl9" class="card-button--site">Site</a>
-                        <a href="#" class="card-button--code">Code</a>
+                        <a href="./projets/banque-acquisition.html" class="card-button--site">Étude de cas</a>
                     </div>
                 </div>
 
-                 <!-- Project 3 -->
+                 <!-- Project 3 : SSIS (vidéo YouTube) -->
                 <div class="card">
-                    <img src="./img/projects/project_3.png" alt="">
-                    <h3 class="card-title">Dashboard des réponses serveurs</h3>
-                    <p class="card-description" style="margin-bottom: 30px;">Dashboard interactif permettant le monitoring des réponses serveurs.</p>
+                    <img src="https://i.ytimg.com/vi/IxJ9KP1XBuo/maxresdefault.jpg" alt="Vidéo : packages SSIS vers SQL Server">
+                    <h3 class="card-title">Pipelines ETL avec SSIS</h3>
+                    <p class="card-description">SQL Server Integration Services : chargement de données dans des tables SQL Server.</p>
                     <div class="card-buttons">
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiMGE1ZTQ3MWItN2NiMS00NTRiLTk0YzMtNDk5OWIyMzdmZThmIiwidCI6IjVjYjA2YTgwLTJkZDUtNDNkOS05YjJlLWFmMDA1M2I3MTRkYyIsImMiOjl9" class="card-button--site"> Site</a>
-                        <a href="#" class="card-button--code">Code</a>
+                        <button type="button" class="card-button--site" data-video="IxJ9KP1XBuo">Aperçu</button>
                     </div>
                 </div>
 
@@ -376,6 +372,19 @@
     <footer class="footer flex-center">
         <p><small>© Ingrid AVOCEGAMOU. All rights reserved.</small></p>
     </footer>
+
+    <!-- Fenêtre d'aperçu (galerie d'images ou vidéo) -->
+    <div class="modal" id="preview-modal" hidden>
+        <div class="modal-content" role="dialog" aria-modal="true" aria-label="Aperçu du projet">
+            <button type="button" class="modal-close" aria-label="Fermer">&times;</button>
+            <div class="modal-body"></div>
+            <div class="modal-nav" hidden>
+                <button type="button" class="modal-prev" aria-label="Image précédente">&#8592;</button>
+                <span class="modal-counter"></span>
+                <button type="button" class="modal-next" aria-label="Image suivante">&#8594;</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
